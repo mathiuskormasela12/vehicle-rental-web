@@ -1,6 +1,6 @@
 // =========== Root Reducer
 // import all modules
-import { combineReducers } from 'redux';
+import { combineReducers } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import hardSet from 'redux-persist/es/stateReconciler/hardSet';
 import storage from 'redux-persist/lib/storage';
