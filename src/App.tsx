@@ -1,17 +1,30 @@
-// =========== App
-// import all module
+// ========== App
+// import all modules
 import React from 'react';
-import styled from 'styled-components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import persistedStore from './redux/store';
 
-const App: React.FC = () => (
-  <div>
-    <h1>Vehicle Rental Web</h1>
-    <Title>Test</Title>
-  </div>
-);
+// import all pages
+import Home from './views/Home';
+import Register from './views/Register';
+
+const App: React.FC = () => {
+  const { store, persistor } = persistedStore;
+
+  return (
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+  );
+};
 
 export default App;
-
-const Title = styled.h1`
-	color: red;
-`;
