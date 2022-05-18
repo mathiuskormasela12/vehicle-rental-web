@@ -8,7 +8,7 @@ import persistedStore from './redux/store';
 
 // import all pages
 import Home from './views/Home';
-import Register from './views/Register';
+import SignUp from './views/SignUp';
 
 const App: React.FC = () => {
   const { store, persistor } = persistedStore;
@@ -19,7 +19,7 @@ const App: React.FC = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<SignUp />} />
           </Routes>
         </BrowserRouter>
       </PersistGate>

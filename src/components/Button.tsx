@@ -7,6 +7,6 @@ interface IProps {
 	onClick: any;
 }
 
-export const Button = ({ children, onClick }: IProps) => (
+export const Button: React.FC<IProps> = ({ children, onClick }) => (
   <button type="submit" onClick={onClick}>{children}</button>
 );

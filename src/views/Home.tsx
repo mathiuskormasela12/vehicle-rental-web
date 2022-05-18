@@ -7,7 +7,7 @@ import { IReduxStates } from '../interfaces';
 import { setToken } from '../redux/actions/auth';
 
 // import all components
-import { Button } from '../components';
+import { Button, Header } from '../components';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
@@ -25,6 +25,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
+      <Header title="Home | Vehicle Rental" />
       <h1>Vehicle Rental Web</h1>
       <Button onClick={handleSetToken}>Set Token</Button>
       <Button onClick={handleResetToken}>Reset Token</Button>
